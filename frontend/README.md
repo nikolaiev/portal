@@ -1,6 +1,6 @@
 
 
-if you want to live do not read it
+if you want to live do not read it!
  
 # vportal
 
