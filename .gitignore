@@ -18,13 +18,15 @@ target/
 ### NetBeans ###
 nbproject/private/
 build/
+!frontend/build/
 nbbuild/
-dist/
 nbdist/
 .nb-gradle/
 
 
 node_modules/
+node/
+backend/src/main/resources/public/
 yarn-debug.log*
 yarn-error.log*
 test/unit/coverage
