@@ -33,19 +33,15 @@
 </template>
 <script>
 export default {
-  name: 'Login',
-  data () {
-    return {
-      msg: 'Come in my classroom'
-    }
-  }
+  name: 'Login'
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   div{
     width: 300px;
-    margin-left: 40%;
+    margin-left: auto;
+    margin-right: auto;
     padding-top: 2px;
     padding-left: 2px;
     padding-right: 20px;
