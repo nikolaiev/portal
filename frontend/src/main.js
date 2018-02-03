@@ -4,6 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+/* eslint-disable */
+import jQuery from 'jquery/dist/jquery.js'
+window.jQuery = jQuery;
+
+require('bootstrap/dist/js/bootstrap.js')
+require('bootstrap/dist/css/bootstrap.css')
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
