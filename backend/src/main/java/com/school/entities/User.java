@@ -46,5 +46,6 @@ public class User {
 
     @Null
     @Enumerated(EnumType.STRING)
+    @Column(name = "user_type")
     private UserType type;
 }

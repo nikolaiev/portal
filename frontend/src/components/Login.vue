@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <form action = "" method="POST">
+    <form action = "/login" method="POST">
       <ul>
         <li class="username">
           <label for="username" title="Six or more characters">User name or email</label>
@@ -8,7 +8,7 @@
             type="text"
             name="username"
             id="username"
-            pattern="[A-Za-z0-9_]{3,15}$"
+
             title="Use only A-Z, a-z, 0-9, _ and 3 >= symbol"
             required
             autofocus/>
@@ -18,7 +18,7 @@
           <input
             type="password"
             name="password"
-            pattern="[A-Za-z0-9_]{3,15}$"
+
             title="Use only A-Z, a-z, 0-9, _ and 3 >= symbol"
             id="password"
             required

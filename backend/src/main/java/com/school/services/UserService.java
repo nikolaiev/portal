@@ -1,11 +1,8 @@
 package com.school.services;
 
-import com.school.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.school.entities.User;
 
-@Service
-public class UserService {
-    @Autowired
-    UserRepository userRepository;
+public interface UserService {
+    User getByEmail(String email);
+    boolean isAuthenticated(User user, String password);
 }
