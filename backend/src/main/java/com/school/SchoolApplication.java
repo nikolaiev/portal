@@ -8,8 +8,15 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-@SpringBootApplication(exclude = {SecurityAutoConfiguration.class })
+import static springfox.documentation.builders.PathSelectors.regex;
+
+@SpringBootApplication
 public class SchoolApplication {
 
 	public static void main(String[] args) {
