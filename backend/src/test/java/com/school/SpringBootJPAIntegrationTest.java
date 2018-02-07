@@ -12,7 +12,7 @@ import static junit.framework.TestCase.assertNotNull;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = SchoolApplication.class)
+@SpringBootTest
 public class SpringBootJPAIntegrationTest {
 
     @Autowired

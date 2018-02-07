@@ -3,6 +3,7 @@ package com.school.services;
 import com.school.entities.Message;
 import com.school.repositories.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -14,26 +15,26 @@ public class MessageService implements GenericService<Message>{
 
     @Override
     public Optional<Message> getById(long id) {
-        return null;
+        return Optional.ofNullable(messageRepository.findOne(id));
     }
 
     @Override
     public Iterable<Message> getAllPageOffsetSize(int pageOffset, int pageSize) {
-        return null;
+        return messageRepository.findAll(new PageRequest(pageOffset,pageSize));
     }
 
     @Override
     public Message create(Message one) {
-        return null;
+        return messageRepository.save(one);
     }
 
     @Override
     public Message update(Message one) {
-        return null;
+        return messageRepository.save(one);
     }
 
     @Override
     public void deleteById(long id) {
-
+        messageRepository.delete(id);
     }
 }

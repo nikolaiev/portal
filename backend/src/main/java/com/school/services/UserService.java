@@ -3,6 +3,7 @@ package com.school.services;
 import com.school.entities.User;
 import com.school.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -14,26 +15,26 @@ public class UserService implements GenericService<User> {
 
     @Override
     public Optional<User> getById(long id) {
-        return null;
+        return Optional.ofNullable(userRepository.findOne(id));
     }
 
     @Override
     public Iterable<User> getAllPageOffsetSize(int pageOffset, int pageSize) {
-        return null;
+        return userRepository.findAll(new PageRequest(pageOffset,pageSize));
     }
 
     @Override
     public User create(User one) {
-        return null;
+        return userRepository.save(one);
     }
 
     @Override
     public User update(User one) {
-        return null;
+        return userRepository.save(one);
     }
 
     @Override
     public void deleteById(long id) {
-
+        userRepository.delete(id);
     }
 }

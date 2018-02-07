@@ -4,6 +4,7 @@ import com.school.entities.Message;
 import com.school.entities.News;
 import com.school.repositories.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -15,26 +16,26 @@ public class NewsService implements GenericService<News> {
 
     @Override
     public Optional<News> getById(long id) {
-        return null;
+        return Optional.ofNullable(newsRepository.findOne(id));
     }
 
     @Override
     public Iterable<News> getAllPageOffsetSize(int pageOffset, int pageSize) {
-        return null;
+        return newsRepository.findAll(new PageRequest(pageOffset,pageSize));
     }
 
     @Override
     public News create(News one) {
-        return null;
+        return newsRepository.save(one);
     }
 
     @Override
     public News update(News one) {
-        return null;
+        return newsRepository.save(one);
     }
 
     @Override
     public void deleteById(long id) {
-
+        newsRepository.delete(id);
     }
 }

@@ -13,7 +13,6 @@ public class EventService implements GenericService<Event>{
     @Autowired
     EventRepository eventRepository;
 
-
     @Override
     public Optional<Event> getById(long id) {
         return Optional.ofNullable(eventRepository.findOne(id));

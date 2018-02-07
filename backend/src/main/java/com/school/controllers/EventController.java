@@ -32,7 +32,6 @@ public class EventController implements RestApiController<Event> {
         eventService.deleteById(id);
     }
 
-
     //TODO think is id necessary
     @Override
     @RequestMapping(value = "/",method = RequestMethod.PUT)
