@@ -1,2 +1,2 @@
 INSERT INTO Event(id,title,text) VALUES (1,'Test event','Information about event');
-INSERT INTO USERS   ( EMAIL , MIDDLE_NAME , NAME ,PASSWORD ,SURNAME ) VALUES ('test@i.ua','Volodymirovych','Volodymir','admin','Putin');
+INSERT INTO USERS   ( EMAIL , MIDDLE_NAME , NAME ,PASSWORD ,SURNAME,BIRTHDAY ) VALUES ('test@i.ua','Volodymirovych','Volodymir','admin','Putin',123123);

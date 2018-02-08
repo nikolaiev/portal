@@ -1,5 +1,6 @@
 package com.school.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -39,7 +40,7 @@ public class User {
     private String middleName;
 
     @Null
-    private LocalDate birthday;
+    private long birthday;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Grade grade;
