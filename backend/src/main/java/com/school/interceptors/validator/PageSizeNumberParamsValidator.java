@@ -15,7 +15,7 @@ import static java.lang.String.format;
 public class PageSizeNumberParamsValidator extends HandlerInterceptorAdapter {
     private static final String INVALID_ATTRIBUTE = "Invalid Attribute";
     private static final String POSITIVE_NUMBER_REGEX = "^\\d+$";
-    //TODO replace these to some cosntant class
+    //TODO replace these to some cosntant classgi
     private static final String PAGE_SIZE_PARAM = "page_size";
     private static final String PAGE_NUMB_PARAM = "page_numb";
 
