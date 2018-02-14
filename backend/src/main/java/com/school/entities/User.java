@@ -1,15 +1,12 @@
 package com.school.entities;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "Users")
@@ -40,6 +37,9 @@ public class User {
     private String middleName;
 
     @Null
+    private byte[] image;
+
+    @Null
     private long birthday;
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -47,5 +47,6 @@ public class User {
 
     @Null
     @Enumerated(EnumType.STRING)
+    @Column(name = "user_type")
     private UserType type;
 }
