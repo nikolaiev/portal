@@ -24,7 +24,6 @@ public class SchoolApplication {
 	}
 
 	// Enable CORS globally
-	// Enable Vue.js to make requests from localhost:8080
 	@Profile("!PROD")
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
@@ -32,6 +31,7 @@ public class SchoolApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/api/*").allowedOrigins("http://localhost:8080");
+				registry.addMapping("/api/*").allowedOrigins("http://localhost:3000");
 			}
 		};
 	}
