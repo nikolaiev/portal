@@ -12,6 +12,8 @@ function withProps(Component, props) {
     }
 }
 
+const apiPostsRoute = window.location.protocol+"//"+window.location.hostname+"/news/";
+
 class App extends Component {
 
     constructor() {
@@ -23,7 +25,7 @@ class App extends Component {
     }
 
     getData() {
-        axios.get("http://localhost:8088/news/")
+        axios.get(apiPostsRoute)
             .then(res => {
                     this.setState({posts: res.data.content});
                     console.log(res.data.content)

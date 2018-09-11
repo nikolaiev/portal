@@ -4,6 +4,7 @@ import RichTextEditor from "react-rte";
 import axios from "axios";
 
 let _valueHtml;
+const apiPostsRoute = window.location.protocol+"//"+window.location.hostname+"/news/";
 
 class Admin extends React.Component {
     state = {
@@ -33,7 +34,8 @@ class Admin extends React.Component {
         console.log(data);
 
 
-        axios.post("http://localhost:8088/news/",data)
+
+        axios.post(apiPostsRoute,data)
             .then(res=>{
                 console.log(res);
             })
