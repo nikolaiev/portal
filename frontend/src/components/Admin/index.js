@@ -6,10 +6,6 @@ import axios from "axios";
 let _valueHtml;
 
 class Admin extends React.Component {
-    constructor(){
-        super();
-    }
-
     state = {
         value: RichTextEditor.createEmptyValue()
     };
