@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
-import './App.css';
-import Header from './components/Header';
-import Admin from './components/Admin';
-import PostList from './components/PostList';
-import {HashRouter, Switch, Route} from 'react-router-dom'
+import React, {Component} from "react";
+import "./App.css";
+import Admin from "./components/Admin";
+import PostList from "./components/PostList";
+import {HashRouter, Route} from "react-router-dom";
 
-import axios from 'axios'
+import axios from "axios";
 
 function withProps(Component, props) {
     return function (matchProps) {

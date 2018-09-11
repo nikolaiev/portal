@@ -1,6 +1,6 @@
 import React from "react";
 import "./Admin.css";
-import RichTextEditor from 'react-rte';
+import RichTextEditor from "react-rte";
 import axios from "axios";
 
 let _valueHtml;
