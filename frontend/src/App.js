@@ -1,21 +1,47 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Header from './components/Header';
+import Admin from './components/Admin';
+import PostList from './components/PostList';
+import {HashRouter, Switch, Route} from 'react-router-dom'
+
+import axios from 'axios'
+
+function withProps(Component, props) {
+    return function (matchProps) {
+        return <Component {...props} {...matchProps} />
+    }
+}
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+
+    constructor() {
+        super();
+        this.state = {
+            posts: []
+        };
+        this.getData();
+    }
+
+    getData() {
+        axios.get("http://localhost:8088/news/")
+            .then(res => {
+                    this.setState({posts: res.data.content});
+                    console.log(res.data.content)
+                }
+            )
+    }
+
+    render() {
+        return (
+            <HashRouter>
+                <div>
+                    <Route exact path='/' component={withProps(PostList, {posts: this.state.posts})}/>
+                    <Route path='/admin' component={Admin}/>
+                </div>
+            </HashRouter>
+        );
+    }
 }
 
 export default App;
