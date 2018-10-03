@@ -7,8 +7,7 @@ import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 
 function reducer(state = [], action) {
-    console.log(state )
-    console.log(action)
+    console.log("reducer called");
 
     if (action.type === 'ADD_POST') {
         return [
@@ -16,6 +15,11 @@ function reducer(state = [], action) {
             action.payload
         ];
     }
+
+    if (action.type === 'CLEAN_UP') {
+        return [];
+    }
+
     return state;
 }
 

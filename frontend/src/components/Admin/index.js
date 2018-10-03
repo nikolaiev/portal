@@ -5,6 +5,8 @@ import axios from "axios";
 import {connect} from 'react-redux';
 let _valueHtml;
 const apiPostsRoute = window.location.protocol + "//" + window.location.hostname + "/news/";
+// const apiPostsRoute = window.location.protocol + "//localhost:8088/news/";
+
 
 class Admin extends React.Component {
     state = {

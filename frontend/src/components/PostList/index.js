@@ -13,6 +13,7 @@ class PostList extends React.Component {
     // }
 
     render(){
+        console.log("Post List ")
         console.log(this.props.testStore);
 
         let posts = this.props.testStore.map( (post, index) => {

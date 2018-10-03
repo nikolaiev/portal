@@ -16,8 +16,8 @@ function withProps(Component, props) {
     }
 }
 
-// const apiPostsRoute = window.location.protocol+"//"+window.location.hostname+"/news/";
-const apiPostsRoute = window.location.protocol + "//localhost:8088/news/";
+const apiPostsRoute = window.location.protocol+"//"+window.location.hostname+"/news/";
+// const apiPostsRoute = window.location.protocol + "//localhost:8088/news/";
 
 class App extends Component {
 
@@ -28,17 +28,29 @@ class App extends Component {
 
     //TODO update to set data to testStore
     getData() {
+        this.getActualPstsData();
+        setInterval(()=> {
+            this.getActualPstsData();
+        },5000);
+    }
+
+    getActualPstsData() {
         axios.get(apiPostsRoute)
             .then(res => {
-                //this.props.onLoadPost()
-                    this.setState({posts: res.data.content});
-                    console.log(res.data.content)
+                    this.props.onRefreshPost();
+                    this.addPostsToState(res);
                 }
             )
     }
 
+    addPostsToState(res) {
+        for (var i in res.data.content) {
+            let postData = res.data.content[i];
+            this.props.onLoadPost(postData)
+        }
+    }
+
     render() {
-        console.log(this.props.testStore);
         return (
             <HashRouter>
                 <div className="App-body">
@@ -62,6 +74,9 @@ export default connect(
     dispatch => ({
         onLoadPost: (postData) => {
             dispatch({type: 'ADD_POST', 'payload': postData})
+        },
+        onRefreshPost: () => {
+            dispatch({type: 'CLEAN_UP'})
         }
     })
 )(App);
