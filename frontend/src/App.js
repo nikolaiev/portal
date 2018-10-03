@@ -10,11 +10,11 @@ import {connect} from 'react-redux';
 
 import axios from "axios";
 
-function withProps(Component, props) {
-    return function (matchProps) {
-        return <Component {...props} {...matchProps} />
-    }
-}
+// function withProps(Component, props) {
+//     return function (matchProps) {
+//         return <Component {...props} {...matchProps} />
+//     }
+// }
 
 const apiPostsRoute = window.location.protocol+"//"+window.location.hostname+"/news/";
 // const apiPostsRoute = window.location.protocol + "//localhost:8088/news/";
